@@ -2,31 +2,19 @@
 
 This project is a simple login application with a React frontend and a Node.js backend. It uses Material-UI for styling, Zustand for state management, and includes a mock authentication system.
 
-## Prerequisites
-
-- Node.js (v14 or later)
-- npm
-
 ## Setup
 
-1. Clone the repository:
-
-   ```sh
-   git clone https://github.com/your-username/login-application.git
-   cd login-page
-   ```
-
-2. Set up the frontend:
+1. Set up the frontend:
    ```sh
      cd frontend
      npm install
    ```
-3. Set up the backend:
+2. Set up the backend:
    ```sh
       cd ../backend
       npm install
    ```
-4. Configure environment variables:
+3. Configure environment variables:
 
 - Edit `frontend/.env`:
   ```
