@@ -1,11 +1,15 @@
 import create from "zustand"
 import axios from "axios"
 
+// Environment variable for API URL
 const API_URL = import.meta.env.VITE_API_URL
 
+// Zustand store for authentication
 const useAuthStore = create((set) => ({
   isAuthenticated: false,
   user: null,
+
+  // Login function
   login: async (username, password) => {
     try {
       const response = await axios.post(`${API_URL}/api/login`, {
@@ -14,10 +18,10 @@ const useAuthStore = create((set) => ({
       })
       set({ isAuthenticated: true, user: response.data.user })
     } catch (error) {
-      throw new Error(error.response.data.message || "Login failed")
+      const errorMessage = error.response?.data?.message || "Login failed"
+      throw new Error(errorMessage)
     }
   },
-  logout: () => set({ isAuthenticated: false, user: null }),
 }))
 
 export default useAuthStore
